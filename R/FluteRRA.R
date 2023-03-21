@@ -162,7 +162,7 @@ FluteRRA <- function(gene_summary,
   }
   if(omitEssential){
     dd = OmitCommonEssential(dd, symbol = "HumanGene")
-    dd.sgrna = OmitCommonEssential(dd.sgrna, symbol = "HumanGene")
+    ##dd.sgrna = OmitCommonEssential(dd.sgrna, symbol = "HumanGene")
     write.table(dd, file.path(outdir, paste0("RRA/", proj, "_omit_essential.txt")),
                 sep = "\t", row.names = FALSE, quote = FALSE)
   }
