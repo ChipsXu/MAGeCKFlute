@@ -129,10 +129,10 @@ retrieve_gs <- function(type = c("KEGG", "REACTOME", "CORUM", "GO"), organism = 
 
   if("KEGG" %in% type){ ## Process genesets from KEGG
     message(format(Sys.time(), " Downloading genesets from KEGG ..."))
-    gene2path = read.table(paste0("http://rest.kegg.jp/link/pathway/", organism),
+    gene2path = read.table(paste0("https://rest.kegg.jp/link/pathway/", organism),
                            sep = "\t", stringsAsFactors = FALSE)
     names(gene2path) = c("EntrezID", "PathwayID")
-    pathways = read.table(paste0("http://rest.kegg.jp/list/pathway/", organism),
+    pathways = read.table(paste0("https://rest.kegg.jp/list/pathway/", organism),
                           sep = "\t", stringsAsFactors = FALSE)
     names(pathways) = c("PathwayID","PathwayName")
     gene2path$EntrezID=gsub(".*:", "", gene2path$EntrezID)
